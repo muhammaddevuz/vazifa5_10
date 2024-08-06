@@ -16,41 +16,15 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Home',
-          style: TextStyle(
-            fontSize: 20,
-          ),
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (ctx) => CardScreen(userId: userId),
-                ),
-              );
-            },
-            icon: const Icon(Icons.card_travel_outlined),
-          ),
-          IconButton(
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (ctx) => const PaymentScreen(),
-                ),
-              );
-            },
-            icon: const Icon(Icons.transfer_within_a_station_rounded),
-          ),
-        ],
       ),
       drawer: const CustomDrawerWidget(),
       body: const Column(),
       floatingActionButton: FloatingActionButton(
         shape: const CircleBorder(),
-        backgroundColor: Colors.amber.shade800,
+        backgroundColor: Colors.blue,
         onPressed: () => showAddCardDialog(context, userId),
         child: const Icon(Icons.add, size: 30, color: Colors.white),
       ),

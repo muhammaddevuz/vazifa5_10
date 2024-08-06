@@ -38,11 +38,9 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         id: currentUser.uid,
         fullName: event.fullName,
         email: event.email,
-        passportId: event.passportId,
         cards: [],
         firstname: event.firstname,
         lastname: event.lastname,
-        imageUrl: event.imageUrl,
       );
 
       await userRepository.addUser(userModel);

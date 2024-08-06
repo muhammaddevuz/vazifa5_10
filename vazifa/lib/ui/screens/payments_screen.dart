@@ -42,8 +42,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
               size: 20,
             )),
         title: const Text(
-          'Transfer Money',
-          style: TextStyle(fontSize: 20),
+          'Transfer',
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
@@ -55,26 +55,26 @@ class _PaymentScreenState extends State<PaymentScreen> {
             child: Column(
               children: [
                 const SizedBox(height: 20),
-                Icon(Icons.abc, size: 200, color: Colors.amber.shade700),
+                const FlutterLogo(size: 200),
                 const SizedBox(height: 20),
                 TextFormField(
                   controller: _senderCardNumberController,
                   inputFormatters: [CardNumberFormatter()],
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Sender Card Number',
                     enabledBorder: OutlineInputBorder(
                       borderRadius:
-                          const BorderRadius.all(Radius.circular(12.5)),
+                          BorderRadius.all(Radius.circular(12.5)),
                       borderSide: BorderSide(
-                        color: Colors.amber.shade900,
+                        color: Colors.black,
                         width: 3,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius:
-                          const BorderRadius.all(Radius.circular(12.5)),
+                          BorderRadius.all(Radius.circular(12.5)),
                       borderSide: BorderSide(
-                        color: Colors.amber.shade900,
+                        color: Colors.black,
                         width: 3,
                       ),
                     ),
@@ -93,21 +93,21 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 const SizedBox(height: 20),
                 TextFormField(
                   controller: _recipientCardNumberController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Recipient Card Number',
                     enabledBorder: OutlineInputBorder(
                       borderRadius:
-                          const BorderRadius.all(Radius.circular(12.5)),
+                          BorderRadius.all(Radius.circular(12.5)),
                       borderSide: BorderSide(
-                        color: Colors.amber.shade900,
+                        color: Colors.black,
                         width: 3,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius:
-                          const BorderRadius.all(Radius.circular(12.5)),
+                          BorderRadius.all(Radius.circular(12.5)),
                       borderSide: BorderSide(
-                        color: Colors.amber.shade900,
+                        color: Colors.black,
                         width: 3,
                       ),
                     ),
@@ -123,21 +123,21 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 const SizedBox(height: 20),
                 TextFormField(
                   controller: _amountController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Amount',
                     enabledBorder: OutlineInputBorder(
                       borderRadius:
-                          const BorderRadius.all(Radius.circular(12.5)),
+                          BorderRadius.all(Radius.circular(12.5)),
                       borderSide: BorderSide(
-                        color: Colors.amber.shade900,
+                        color: Colors.black,
                         width: 3,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius:
-                          const BorderRadius.all(Radius.circular(12.5)),
+                          BorderRadius.all(Radius.circular(12.5)),
                       borderSide: BorderSide(
-                        color: Colors.amber.shade900,
+                        color: Colors.black,
                         width: 3,
                       ),
                     ),
@@ -151,8 +151,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 ),
                 const SizedBox(height: 200),
                 SizedBox(
-                  width: double.infinity,
+                  width: 350,
                   child: FilledButton(
+                    style: FilledButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        padding: const EdgeInsets.symmetric(vertical: 7)),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         print('Form is valid');
@@ -168,7 +171,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         print('Form is invalid');
                       }
                     },
-                    child: const Text('Transfer'),
+                    child: const Text(
+                      'Transfer',
+                      style: TextStyle(fontSize: 30),
+                    ),
                   ),
                 ),
               ],

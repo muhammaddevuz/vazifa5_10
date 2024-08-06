@@ -1,14 +1,10 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CardModel {
   String id;
   String fullname;
   String number;
-  DateTime expiryDate;
+  String expiryDate;
   double balance;
-  String bankName;
-  String cardName;
-  String type;
   String userId;
 
   CardModel({
@@ -17,9 +13,6 @@ class CardModel {
     required this.number,
     required this.expiryDate,
     required this.balance,
-    required this.bankName,
-    required this.cardName,
-    required this.type,
     required this.userId,
   });
 
@@ -28,11 +21,8 @@ class CardModel {
       id: documentId,
       fullname: data['fullname'],
       number: data['number'],
-      expiryDate: (data['expiryDate'] as Timestamp).toDate(),
+      expiryDate: data['expiryDate'],
       balance: data['balance'].toDouble(),
-      bankName: data['bankName'],
-      cardName: data['cardName'],
-      type: data['type'],
       userId: data['userId'],
     );
   }
@@ -41,11 +31,8 @@ class CardModel {
     return {
       'fullname': fullname,
       'number': number,
-      'expiryDate': Timestamp.fromDate(expiryDate),
+      'expiryDate': expiryDate,
       'balance': balance,
-      'bankName': bankName,
-      'cardName': cardName,
-      'type': type,
       'userId': userId,
     };
   }
@@ -54,7 +41,7 @@ class CardModel {
     String? id,
     String? fullname,
     String? number,
-    DateTime? expiryDate,
+    String? expiryDate,
     double? balance,
     String? bankName,
     String? cardName,
@@ -67,9 +54,6 @@ class CardModel {
       number: number ?? this.number,
       expiryDate: expiryDate ?? this.expiryDate,
       balance: balance ?? this.balance,
-      bankName: bankName ?? this.bankName,
-      cardName: cardName ?? this.cardName,
-      type: type ?? this.type,
       userId: userId ?? this.userId,
     );
   }

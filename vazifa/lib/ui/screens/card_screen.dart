@@ -60,8 +60,9 @@ class _CardScreenState extends State<CardScreen> {
                         final card = state.cards[index];
                         final gradient = gradients[index % gradients.length];
                         return Container(
-                          margin:
-                              const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                          height: 200,
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 5),
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
                             gradient: gradient,
@@ -76,34 +77,29 @@ class _CardScreenState extends State<CardScreen> {
                             ],
                           ),
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 card.fullname,
                                 style: const TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 ),
                               ),
                               const SizedBox(height: 5),
                               Text(card.number,
-                                  style: const TextStyle(color: Colors.white)),
-                              const SizedBox(height: 5),
-                              Text('${card.expiryDate.toLocal()}'.split(' ')[0],
-                                  style: const TextStyle(color: Colors.white)),
+                                  style: const TextStyle(
+                                      color: Colors.white, fontSize: 18)),
                               const SizedBox(height: 5),
                               Text('\$${card.balance.toStringAsFixed(2)}',
-                                  style: const TextStyle(color: Colors.white)),
+                                  style: const TextStyle(
+                                      color: Colors.white, fontSize: 18)),
                               const SizedBox(height: 5),
-                              Text(card.bankName,
-                                  style: const TextStyle(color: Colors.white)),
-                              const SizedBox(height: 5),
-                              Text(card.cardName,
-                                  style: const TextStyle(color: Colors.white)),
-                              const SizedBox(height: 5),
-                              Text(card.type,
-                                  style: const TextStyle(color: Colors.white)),
+                              Text(card.expiryDate,
+                                  style: const TextStyle(
+                                      color: Colors.white, fontSize: 18)),
                             ],
                           ),
                         );

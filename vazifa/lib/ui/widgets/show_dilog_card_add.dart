@@ -9,9 +9,6 @@ void showAddCardDialog(BuildContext context, String userId) {
   final TextEditingController numberController = TextEditingController();
   final TextEditingController expiryDateController = TextEditingController();
   final TextEditingController balanceController = TextEditingController();
-  final TextEditingController bankNameController = TextEditingController();
-  final TextEditingController cardNameController = TextEditingController();
-  final TextEditingController typeController = TextEditingController();
 
   showDialog(
     context: context,
@@ -26,19 +23,19 @@ void showAddCardDialog(BuildContext context, String userId) {
             children: [
               TextField(
                 controller: fullNameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Full Name',
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                    borderRadius: BorderRadius.all(Radius.circular(12.5)),
                     borderSide: BorderSide(
-                      color: Colors.amber.shade900,
+                      color: Colors.black,
                       width: 3,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                    borderRadius: BorderRadius.all(Radius.circular(12.5)),
                     borderSide: BorderSide(
-                      color: Colors.amber.shade900,
+                      color: Colors.black,
                       width: 3,
                     ),
                   ),
@@ -47,19 +44,19 @@ void showAddCardDialog(BuildContext context, String userId) {
               const SizedBox(height: 10),
               TextField(
                 controller: numberController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Card Number',
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                    borderRadius: BorderRadius.all(Radius.circular(12.5)),
                     borderSide: BorderSide(
-                      color: Colors.amber.shade900,
+                      color: Colors.black,
                       width: 3,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                    borderRadius: BorderRadius.all(Radius.circular(12.5)),
                     borderSide: BorderSide(
-                      color: Colors.amber.shade900,
+                      color: Colors.black,
                       width: 3,
                     ),
                   ),
@@ -69,19 +66,19 @@ void showAddCardDialog(BuildContext context, String userId) {
               const SizedBox(height: 10),
               TextField(
                 controller: expiryDateController,
-                decoration: InputDecoration(
-                  labelText: 'Expiry Date (yyyy.MM.dd)',
+                decoration: const InputDecoration(
+                  labelText: 'Expiry Date (yy/mm)',
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                    borderRadius: BorderRadius.all(Radius.circular(12.5)),
                     borderSide: BorderSide(
-                      color: Colors.amber.shade900,
+                      color: Colors.black,
                       width: 3,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                    borderRadius: BorderRadius.all(Radius.circular(12.5)),
                     borderSide: BorderSide(
-                      color: Colors.amber.shade900,
+                      color: Colors.black,
                       width: 3,
                     ),
                   ),
@@ -90,87 +87,24 @@ void showAddCardDialog(BuildContext context, String userId) {
               const SizedBox(height: 10),
               TextField(
                 controller: balanceController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Balance',
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                    borderRadius: BorderRadius.all(Radius.circular(12.5)),
                     borderSide: BorderSide(
-                      color: Colors.amber.shade900,
+                      color: Colors.black,
                       width: 3,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                    borderRadius: BorderRadius.all(Radius.circular(12.5)),
                     borderSide: BorderSide(
-                      color: Colors.amber.shade900,
+                      color: Colors.black,
                       width: 3,
                     ),
                   ),
                 ),
                 keyboardType: TextInputType.number,
-              ),
-              const SizedBox(height: 10),
-              TextField(
-                controller: bankNameController,
-                decoration: InputDecoration(
-                  labelText: 'Bank Name',
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.5)),
-                    borderSide: BorderSide(
-                      color: Colors.amber.shade900,
-                      width: 3,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.5)),
-                    borderSide: BorderSide(
-                      color: Colors.amber.shade900,
-                      width: 3,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 10),
-              TextField(
-                controller: cardNameController,
-                decoration: InputDecoration(
-                  labelText: 'Card Name',
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.5)),
-                    borderSide: BorderSide(
-                      color: Colors.amber.shade900,
-                      width: 3,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.5)),
-                    borderSide: BorderSide(
-                      color: Colors.amber.shade900,
-                      width: 3,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 10),
-              TextField(
-                controller: typeController,
-                decoration: InputDecoration(
-                  labelText: 'Type',
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.5)),
-                    borderSide: BorderSide(
-                      color: Colors.amber.shade900,
-                      width: 3,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.5)),
-                    borderSide: BorderSide(
-                      color: Colors.amber.shade900,
-                      width: 3,
-                    ),
-                  ),
-                ),
               ),
             ],
           ),
@@ -189,19 +123,13 @@ void showAddCardDialog(BuildContext context, String userId) {
                 child: const Text('Add Card'),
                 onPressed: () {
                   String expiryDateStr = expiryDateController.text;
-                  List<String> dateParts = expiryDateStr.split('.');
-                  String formattedDate =
-                      '${dateParts[0]}-${dateParts[1]}-${dateParts[2]}';
                   try {
                     final card = CardModel(
                       id: '',
                       fullname: fullNameController.text,
                       number: numberController.text,
-                      expiryDate: DateTime.parse(formattedDate),
+                      expiryDate:expiryDateStr,
                       balance: double.parse(balanceController.text),
-                      bankName: bankNameController.text,
-                      cardName: cardNameController.text,
-                      type: typeController.text,
                       userId: userId,
                     );
 

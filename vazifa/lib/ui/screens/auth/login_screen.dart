@@ -5,7 +5,6 @@ import 'package:vazifa/service/firebase_auth_service.dart';
 import 'package:vazifa/ui/screens/auth/register_screen.dart';
 import 'package:vazifa/ui/screens/home_screen.dart';
 
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -69,24 +68,26 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 40),
-                Icon(Icons.abc, color: Colors.amber.shade500, size: 200),
-                const SizedBox(height: 30),
+                const SizedBox(height: 180),
+                const FlutterLogo(size: 200),
+                const SizedBox(height: 50),
                 TextFormField(
-                  decoration: InputDecoration(
-                    border: const OutlineInputBorder(),
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
                     labelText: "Pochta",
                     enabledBorder: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                      borderRadius:
+                          BorderRadius.all(Radius.circular(12.5)),
                       borderSide: BorderSide(
-                        color: Colors.amber.shade900,
+                        color: Colors.black,
                         width: 3,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                      borderRadius:
+                          BorderRadius.all(Radius.circular(12.5)),
                       borderSide: BorderSide(
-                        color: Colors.amber.shade900,
+                        color: Colors.black,
                         width: 3,
                       ),
                     ),
@@ -106,20 +107,22 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextFormField(
                   obscureText: true,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    border: const OutlineInputBorder(),
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
                     labelText: "Parol",
                     enabledBorder: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                      borderRadius:
+                          BorderRadius.all(Radius.circular(12.5)),
                       borderSide: BorderSide(
-                        color: Colors.amber.shade900,
+                        color: Colors.black,
                         width: 3,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                      borderRadius:
+                          BorderRadius.all(Radius.circular(12.5)),
                       borderSide: BorderSide(
-                        color: Colors.amber.shade900,
+                        color: Colors.black,
                         width: 3,
                       ),
                     ),
@@ -165,8 +168,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: Colors.red.shade50,
-                                border: Border.all(
-                                    color: Colors.amber.shade900, width: 3),
+                                border:
+                                    Border.all(color: Colors.black, width: 3),
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               child: const Center(

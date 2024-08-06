@@ -19,7 +19,6 @@ class _UserAddWidgetsState extends State<UserAddWidgets> {
 
   final fnameController = TextEditingController();
   final lnameController = TextEditingController();
-  final passportIdController = TextEditingController();
 
   bool isLoading = false;
 
@@ -37,11 +36,9 @@ class _UserAddWidgetsState extends State<UserAddWidgets> {
           id: curUser!.uid,
           fullName: '${fnameController.text} ${lnameController.text}',
           email: curUser.email!,
-          passportId: passportIdController.text,
           cards: [], // Bosh lista
           firstname: fnameController.text,
           lastname: lnameController.text,
-          imageUrl: "",
         );
 
         await userRepository.addUser(userModel);
@@ -87,26 +84,26 @@ class _UserAddWidgetsState extends State<UserAddWidgets> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 100),
-                const Icon(Icons.abc, size: 200, color: Colors.amber),
+                const SizedBox(height: 180),
+                const FlutterLogo(size: 200),
                 const SizedBox(height: 50),
                 TextFormField(
                   controller: fnameController,
-                  decoration: InputDecoration(
-                    prefixIcon: const Icon(Icons.person),
-                    border: const OutlineInputBorder(),
+                  decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.person),
+                    border: OutlineInputBorder(),
                     hintText: "Ismingiz",
                     enabledBorder: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                      borderRadius: BorderRadius.all(Radius.circular(12.5)),
                       borderSide: BorderSide(
-                        color: Colors.amber.shade900,
+                        color: Colors.black,
                         width: 3,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                      borderRadius: BorderRadius.all(Radius.circular(12.5)),
                       borderSide: BorderSide(
-                        color: Colors.amber.shade900,
+                        color: Colors.black,
                         width: 3,
                       ),
                     ),
@@ -121,21 +118,21 @@ class _UserAddWidgetsState extends State<UserAddWidgets> {
                 const SizedBox(height: 10),
                 TextFormField(
                   controller: lnameController,
-                  decoration: InputDecoration(
-                    border: const OutlineInputBorder(),
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
                     hintText: "Familyangiz",
-                    prefixIcon: const Icon(Icons.person),
+                    prefixIcon: Icon(Icons.person),
                     enabledBorder: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                      borderRadius: BorderRadius.all(Radius.circular(12.5)),
                       borderSide: BorderSide(
-                        color: Colors.amber.shade900,
+                        color: Colors.black,
                         width: 3,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(Radius.circular(12.5)),
+                      borderRadius: BorderRadius.all(Radius.circular(12.5)),
                       borderSide: BorderSide(
-                        color: Colors.amber.shade900,
+                        color: Colors.black,
                         width: 3,
                       ),
                     ),
@@ -143,35 +140,6 @@ class _UserAddWidgetsState extends State<UserAddWidgets> {
                   validator: (value) {
                     if (value == null || value.trim().isEmpty) {
                       return "Iltimos familyangizni kiriting";
-                    }
-                    return null;
-                  },
-                ),
-                const SizedBox(height: 10),
-                TextFormField(
-                  controller: passportIdController,
-                  decoration: InputDecoration(
-                    border: const OutlineInputBorder(),
-                    hintText: "Passport ID",
-                    prefixIcon: const Icon(Icons.article),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(Radius.circular(12.5)),
-                      borderSide: BorderSide(
-                        color: Colors.amber.shade900,
-                        width: 3,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(Radius.circular(12.5)),
-                      borderSide: BorderSide(
-                        color: Colors.amber.shade900,
-                        width: 3,
-                      ),
-                    ),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.trim().isEmpty) {
-                      return "Iltimos passport ID ni kiriting";
                     }
                     return null;
                   },
@@ -188,7 +156,7 @@ class _UserAddWidgetsState extends State<UserAddWidgets> {
                         color: Colors.red.shade50,
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.amber.shade900,
+                          color: Colors.black,
                           width: 3,
                         )),
                     child: Center(

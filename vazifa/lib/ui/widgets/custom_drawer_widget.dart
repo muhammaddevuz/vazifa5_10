@@ -4,6 +4,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:vazifa/data/model/user_model.dart';
 import 'package:vazifa/data/repositories/user_repositories.dart';
 import 'package:vazifa/ui/screens/auth/login_screen.dart';
+import 'package:vazifa/ui/screens/card_screen.dart';
+import 'package:vazifa/ui/screens/payments_screen.dart';
 
 class CustomDrawerWidget extends StatefulWidget {
   const CustomDrawerWidget({super.key});
@@ -47,14 +49,14 @@ class _CustomDrawerWidgetState extends State<CustomDrawerWidget> {
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
-        mainAxisAlignment:MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
             children: [
               Container(
                 height: 260,
                 width: double.infinity,
-                color: Colors.teal,
+                color: Colors.blue,
                 child: _user == null
                     ? const Center(
                         child: Text('Foydalanuvchi topilmadi',
@@ -97,13 +99,6 @@ class _CustomDrawerWidgetState extends State<CustomDrawerWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                if (user.imageUrl.isNotEmpty)
-                                  CircleAvatar(
-                                    radius: 40,
-                                    backgroundImage:
-                                        NetworkImage(user.imageUrl),
-                                  ),
-                                const SizedBox(height: 10),
                                 Text(
                                   '$firstName $lastName',
                                   style: const TextStyle(
@@ -125,6 +120,32 @@ class _CustomDrawerWidgetState extends State<CustomDrawerWidget> {
                         },
                       ),
               ),
+              ListTile(
+                onTap: () {
+                  Navigator.pushReplacement(
+                      // ignore: use_build_context_synchronously
+                      context,
+                      MaterialPageRoute(
+                          builder: (ctx) => CardScreen(
+                                userId: auth.currentUser!.uid,
+                              )));
+                },
+                leading: const Icon(Icons.credit_card),
+                title: const Text('Cards'),
+                trailing: const Icon(Icons.chevron_right_rounded),
+              ),
+              ListTile(
+                onTap: () {
+                  Navigator.pushReplacement(
+                      // ignore: use_build_context_synchronously
+                      context,
+                      MaterialPageRoute(
+                          builder: (ctx) => const PaymentScreen()));
+                },
+                leading: const Icon(Icons.transfer_within_a_station_rounded),
+                title: const Text('Transfer'),
+                trailing: const Icon(Icons.chevron_right_rounded),
+              ),
             ],
           ),
           ListTile(
@@ -132,7 +153,8 @@ class _CustomDrawerWidgetState extends State<CustomDrawerWidget> {
               await auth.signOut();
               Navigator.pushReplacement(
                   // ignore: use_build_context_synchronously
-                  context, MaterialPageRoute(builder: (ctx) => const LoginScreen()));
+                  context,
+                  MaterialPageRoute(builder: (ctx) => const LoginScreen()));
             },
             leading: const Icon(Icons.exit_to_app),
             title: const Text('Chiqish'),
